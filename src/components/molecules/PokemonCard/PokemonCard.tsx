@@ -1,12 +1,10 @@
-import { Pokemon } from "pokenode-ts"
+import { Pokemon } from "pokenode-ts";
 
 export type TPokemonCard = {
-  pokemon: Pokemon
-}
+  pokemon: Pokemon;
+};
 
 function PokemonCard(props: TPokemonCard) {
-  const { pokemon } = props
-  return ({
-    
-  })
+  const { pokemon } = props;
+  return {};
 }
