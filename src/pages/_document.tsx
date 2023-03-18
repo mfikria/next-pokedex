@@ -28,6 +28,9 @@ export default class MyDocument extends Document<any> {
             data-emotion-css={this.props.ids?.join(" ")}
             dangerouslySetInnerHTML={{ __html: this.props.css }}
           />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet" />
         </Head>
         <body>
           <Main />

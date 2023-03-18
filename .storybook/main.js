@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   stories: [
     '../src/**/*.stories.mdx',
@@ -33,6 +35,7 @@ module.exports = {
         '@emotion/styled': '@emotion/styled',
         '@emotion/css': '@emotion/css',
         '@emotion/babel-preset-css-prop': '@emotion/babel-preset-css-prop',
+        "~": path.join(__dirname, "../src"),
       },
     },
     module: {
