@@ -1,13 +1,13 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import Card from ".";
+import PokemonCard from ".";
 import pokemonList from '~/mocks/pokemon.json'
 
 export default {
-  title: "components/atoms/PokemonCard",
-  component: Card,
-} as ComponentMeta<typeof Card>;
+  title: "components/molecules/PokemonCard",
+  component: PokemonCard,
+} as ComponentMeta<typeof PokemonCard>;
 
-const Template: ComponentStory<typeof Card> = (args) => <Card {...args}></Card>;
+const Template: ComponentStory<typeof PokemonCard> = (args) => <PokemonCard {...args}></PokemonCard>;
 
 export const Default = Template.bind({});
 Default.args = {

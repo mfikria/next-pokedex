@@ -15,7 +15,7 @@ function PokemonCard(props: TPokemonCard) {
   <Card
     css={getPokemonTypeGradientBackgroundColor(mainType)}
     tw="
-      w-[200px]
+      w-full
       h-[200px]
     "
     {...rest}
