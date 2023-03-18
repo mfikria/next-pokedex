@@ -9,4 +9,6 @@ export default {
 const Template: ComponentStory<typeof Card> = (args) => <Card {...args}></Card>;
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  children: 'Card'
+};

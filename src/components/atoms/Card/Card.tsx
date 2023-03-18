@@ -10,15 +10,13 @@ const Card = tw.div`
   justify-between
   rounded-2xl
   shadow-lg
-  cursor-pointer
   transition-all
   duration-500
   ease-in-out
   will-change-transform
+  overflow-hidden
   hover:(
-    scale-105
     shadow-gray-300
-    -translate-y-3
   )
 `;
 

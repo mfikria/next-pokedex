@@ -25,6 +25,13 @@ module.exports = {
     },
  },
  webpackFinal: async (config) => {
+    const rules = config.module.rules
+    const pathToInlineSvg = path.resolve(__dirname, '../src/components/svg')
+
+    // modify storybook's file-loader rule to avoid conflicts with svgr
+    const fileLoaderRule = rules.find((rule) => rule.test.test('.svg'))
+    fileLoaderRule.exclude = pathToInlineSvg
+
   return {
     ...config,
     resolve: {
@@ -48,6 +55,19 @@ module.exports = {
           options: {
             presets: [require.resolve('@emotion/babel-preset-css-prop')],
           },
+        },
+        {
+          test: /\.svg$/,
+          include: pathToInlineSvg,
+          use: [
+            {
+              loader: '@svgr/webpack',
+              options: {
+                icon: true,
+                ref: true,
+              },
+            },
+          ],
         },
       ],
     },
