@@ -2,7 +2,7 @@ import React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { extractCritical } from "@emotion/server";
 
-export default class MyDocument extends Document {
+export default class MyDocument extends Document<any> {
   static async getInitialProps(ctx: any) {
     const initialProps = await Document.getInitialProps(ctx);
     const critical = extractCritical(initialProps.html);

@@ -22,4 +22,31 @@ module.exports = {
        propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
     },
  },
+ webpackFinal: async (config) => {
+  return {
+    ...config,
+    resolve: {
+      ...config.resolve,
+      alias: {
+        ...config.resolve.alias,
+        '@emotion/core': '@emotion/react',
+        '@emotion/styled': '@emotion/styled',
+        '@emotion/css': '@emotion/css',
+        '@emotion/babel-preset-css-prop': '@emotion/babel-preset-css-prop',
+      },
+    },
+    module: {
+      ...config.module,
+      rules: [
+        ...(config.module.rules || []),
+        {
+          test: /\.(ts|tsx)$/,
+          loader: require.resolve('babel-loader'),
+          options: {
+            presets: [require.resolve('@emotion/babel-preset-css-prop')],
+          },
+        },
+      ],
+    },
+  }},
 }
