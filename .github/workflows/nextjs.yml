@@ -27,6 +27,8 @@ concurrency:
 jobs:
   # Build job
   build:
+    env:
+      REPO_NAME: ${{ github.event.repository.name }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

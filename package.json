@@ -20,7 +20,9 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "type:check": "tsc --project tsconfig.json --pretty --noEmit",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "test:e2e": "playwright test",
+    "test:e2e:show-report": "npx playwright show-report"
   },
   "dependencies": {
     "@emotion/css": "^11.10.6",
@@ -49,6 +51,7 @@
     "@babel/core": "^7.21.3",
     "@emotion/babel-plugin": "^11.10.6",
     "@emotion/babel-preset-css-prop": "^11.10.0",
+    "@playwright/test": "^1.31.2",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-interactions": "^6.5.16",

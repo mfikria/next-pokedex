@@ -29,6 +29,17 @@ yarn
 yarn dev
 ```
 
+## Testing
+
+### Unit Test
+
+### E2E
+
+```bash
+npx playwright install
+yarn test:e2e
+```
+
 Open http://localhost:3000 in your browser to see the application running.
 
 ## Project Structure
