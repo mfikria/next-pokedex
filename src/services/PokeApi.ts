@@ -7,7 +7,7 @@ class PokeApi {
     const { limit = 9, offset = 0 } = props || {}
     const response = await fetch(`${this.baseUrl}/pokemon?limit=${limit}&offset=${offset}`);
     if (!response.ok) {
-      throw new Error('Network response was not ok')
+      throw new Error(response.status.toString())
     }
     const { results } = await response.json() as NamedAPIResourceList;
     const pokemons = await Promise.all(results.map(pokemon => this.getPokemonDetail(pokemon.name)))
@@ -17,7 +17,7 @@ class PokeApi {
   public async getPokemonDetail(id: string | number): Promise<Pokemon> {
     const response = await fetch(`${this.baseUrl}/pokemon/${id}`);
     if (!response.ok) {
-      throw new Error('Network response was not ok')
+      throw new Error(response.status.toString())
     }
     const data = await response.json() as Pokemon;
     return data;

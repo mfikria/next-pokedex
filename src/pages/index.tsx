@@ -5,11 +5,16 @@ import PokemonGrid from "~/components/organism/PokemonGrid";
 import flatten from 'lodash/flatten'
 import debounce from 'lodash/debounce'
 import { useRouter } from "next/router";
+import Error from '~/pages/_error'
 
 export default function IndexPage() {
   const router = useRouter()
   const { fetchPokemonList } = usePokeApi()
-  const { data, fetchNextPage, isLoading, isFetchingNextPage } = fetchPokemonList()
+  const { data, fetchNextPage, isLoading, isFetchingNextPage, isError, error } = fetchPokemonList()
+
+  if (isError) {
+    return <Error statusCode={(error as Error).message} />
+  }
 
   useScrollToEnd((isEnd) => {
     if (isEnd && !isFetchingNextPage) {
