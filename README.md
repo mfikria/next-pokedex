@@ -1,5 +1,7 @@
 ## Next.js Pokémon API Project
 This is a Next.js project that consumes the Pokémon API and displays information about different Pokémon using https://pokeapi.co/docs/v2
+<img width="1041" alt="image" src="https://user-images.githubusercontent.com/9253585/226161666-32938781-c21b-474e-bfc2-8e84f7e937f5.png">
+<img width="865" alt="image" src="https://user-images.githubusercontent.com/9253585/226161689-e503d601-5eae-4df6-a119-25982ec1c47d.png">
 
 ## Getting Started
 To get started with this project, you can either clone this repository or create a new Next.js project from scratch and copy the necessary files.
