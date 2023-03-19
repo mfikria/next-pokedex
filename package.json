@@ -17,7 +17,8 @@
     "lint": "next lint",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "type:check": "tsc --project tsconfig.json --pretty --noEmit"
+    "type:check": "tsc --project tsconfig.json --pretty --noEmit",
+    "test": "jest --watch"
   },
   "dependencies": {
     "@emotion/css": "^11.10.6",
@@ -55,6 +56,11 @@
     "@storybook/react": "^6.5.16",
     "@storybook/testing-library": "^0.0.13",
     "@svgr/webpack": "^6.5.1",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/jest": "^29.5.0",
     "@typescript-eslint/eslint-plugin": "^5.55.0",
     "@typescript-eslint/parser": "^5.55.0",
     "babel-loader": "^8.3.0",
@@ -70,6 +76,8 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.11",
     "husky": "^8.0.3",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
     "lint-staged": "^13.2.0",
     "prettier": "^2.8.4",
     "storybook-addon-next": "^1.7.3"

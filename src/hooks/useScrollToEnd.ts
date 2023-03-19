@@ -5,10 +5,11 @@ const useScrollToEnd = (callbackFn: (isEnd: boolean) => void) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset;
       const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
       const clientHeight = document.documentElement.clientHeight || window.innerHeight;
-      const isBottom = scrollTop + clientHeight === scrollHeight;
+      const isBottom = scrollTop + clientHeight >= scrollHeight;
+      console.log(window.pageYOffset, clientHeight, scrollHeight)
       setIsEnd(isBottom);
       callbackFn(isBottom)
     };
