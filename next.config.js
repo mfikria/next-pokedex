@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  assetPrefix: process.env.REPO_NAME ? process.env.REPO_NAME : '',
   images: {
     unoptimized: true,
   },
