@@ -6,10 +6,11 @@ import DetailTable from "~/components/atoms/DetailTable"
 import Badge from "~/components/atoms/Badge"
 import tw from "twin.macro"
 import BackIcon from '~/components/svg/back.svg'
+import capitalize from "lodash/capitalize"
 
 export type TPokemonDetail = React.HTMLProps<HTMLDivElement> & {
   pokemon: Pokemon
-  onClickBackButton: () => void
+  onClickBackButton?: () => void
 }
 
 const shadowStyles = tw`
@@ -27,6 +28,7 @@ const shadowStyles = tw`
     translate-y-0
     transition-transform
     rounded-[50%]
+    left-[50%]
   )
 `
 
@@ -34,14 +36,13 @@ function PokemonDetail(props: TPokemonDetail) {
   const { pokemon, onClickBackButton, ...rest } = props
   const mainType = pokemon.types[0].type.name
 
-  const detailStats = {
-    'HP': 0,
-    Attack: 0,
-    Defense: 0,
-    'Special-attack': 0,
-    'Special-defense': 0,
-    'Speed': 0,
-  }
+  const detailStats = pokemon.stats.reduce((acc, detail) => {
+    const name = capitalize(detail.stat.name)
+    return {
+      ...acc,
+      [name]: detail.base_stat
+    }
+  }, {})
   
   return (
     <Card

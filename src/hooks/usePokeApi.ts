@@ -1,4 +1,4 @@
-import { useInfiniteQuery } from "react-query"
+import { useInfiniteQuery, useQuery } from "react-query"
 import PokeApi from "~/services/PokeApi"
 
 const pokeApiClient = new PokeApi()
@@ -20,9 +20,13 @@ function usePokeApi() {
       }
     }
   )
+  
+
+  const fetchPokemonDetail = (id: string | number) => useQuery(`pokemon-${id}`, () => pokeApiClient.getPokemonDetail(id))
 
   return {
-    fetchPokemonList
+    fetchPokemonList,
+    fetchPokemonDetail
   }
 }
 

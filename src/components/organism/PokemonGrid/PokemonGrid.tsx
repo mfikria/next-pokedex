@@ -6,11 +6,12 @@ import PokemonCardShimmer from "~/components/molecules/PokemonCard/Shimmer"
 export type TPokemonGrid = React.HTMLProps<HTMLDivElement> & {
   isLoading?: boolean
   isLoadingMore?: boolean
+  onClickPokemon?: (pokemon: Pokemon) => void
   pokemons: Pokemon[]
 }
 
 function PokemonGrid(props: TPokemonGrid) {
-  const { pokemons, isLoading = false, isLoadingMore = false, ...rest } = props
+  const { pokemons, isLoading = false, isLoadingMore = false, onClickPokemon, ...rest } = props
   return (
     <div {...rest}>
       <div
@@ -34,7 +35,11 @@ function PokemonGrid(props: TPokemonGrid) {
             Array(9).fill(null).map((_, i) => <PokemonCardShimmer key={i} />)
           :
             pokemons.map(pokemon => (
-              <PokemonCard key={pokemon.id} pokemon={pokemon} />
+              <PokemonCard
+                key={pokemon.id}
+                pokemon={pokemon}
+                onClick={() => onClickPokemon?.(pokemon)}
+              />
             ))
         }
       </div>

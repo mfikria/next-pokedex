@@ -31,7 +31,7 @@ function PokemonCard(props: TPokemonCard) {
         <Image src={pokemon.sprites.other?.dream_world.front_default!} alt={pokemon.name} fill />
       </div>
       
-      <Typography variant="h3" tw="uppercase mb-0">
+      <Typography variant="h3" tw="uppercase mb-0 font-bold">
         {pokemon.name}
       </Typography>
     </Card>

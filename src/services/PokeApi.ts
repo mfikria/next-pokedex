@@ -10,11 +10,11 @@ class PokeApi {
       throw new Error('Network response was not ok')
     }
     const { results } = await response.json() as NamedAPIResourceList;
-    const pokemons = await Promise.all(results.map(pokemon => this.getPokemonDetails(pokemon.name)))
+    const pokemons = await Promise.all(results.map(pokemon => this.getPokemonDetail(pokemon.name)))
     return pokemons
   }
 
-  public async getPokemonDetails(id: string | number): Promise<Pokemon> {
+  public async getPokemonDetail(id: string | number): Promise<Pokemon> {
     const response = await fetch(`${this.baseUrl}/pokemon/${id}`);
     if (!response.ok) {
       throw new Error('Network response was not ok')
