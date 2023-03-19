@@ -1,38 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Next.js Pokémon API Project
+This is a Next.js project that consumes the Pokémon API and displays information about different Pokémon using https://pokeapi.co/docs/v2
 
 ## Getting Started
+To get started with this project, you can either clone this repository or create a new Next.js project from scratch and copy the necessary files.
 
-First, run the development server:
+## Prerequisites
+To run this project, you need to have Node.js and npm (or yarn) installed on your machine.
+
+### Installing
+Clone this repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+git clone https://github.com/mfikria/next-pokedex.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Install dependencies
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+cd next-pokedex
+yarn
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Run the development server
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Open http://localhost:3000 in your browser to see the application running.
 
-## Learn More
+## Project Structure
+Here's a brief description of the files and directories:
 
-To learn more about Next.js, take a look at the following resources:
+- src: This is the root directory for the source code.
+  - components: This directory contains reusable UI components organized into subdirectories by category, such as atoms, molecules, and organisms.
+    - atoms: Contains small, single-purpose components like badges, cards, and typography.
+    - molecules: Contains more complex components made up of smaller components, such as the PokemonCard.
+    - organism: Contains larger, more complex components that represent full sections of the UI, like the PokemonDetail and PokemonGrid.
+  - svg: Contains SVG images used throughout the app, such as the back.svg and pokemon-logo.svg.
+  - hooks: Contains custom React hooks used in the app, such as usePokeApi and useScrollToEnd.
+  - mocks: Contains mock data used in tests, such as the pokemon.json file.
+  - pages: Contains the pages of the app that are rendered on the server, including dynamic routes like /pokemon/[id]. The files in this directory have a special role in Next.js and must be named correctly to function properly.
+  - services: Contains modules that interact with external services or APIs, such as the PokeApi module that communicates with the PokeAPI.
+  - styles: Contains global styles used throughout the app, such as the GlobalStyles module.
+  - utils: Contains utility modules, such as the colors module for defining the app's color scheme.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Technology
+- Next.js is a React framework used for server-side rendering, static site generation, and building modern web applications.
+- Storybook is a UI development environment that enables developers to isolate, develop, and showcase UI components in an interactive way. - Emotion is a CSS-in-JS library that allows developers to write CSS styles within JavaScript code.
+- Twin.macro is a library that extends the CSS syntax with the ability to use CSS-in-JS features.
+- Jest is a JavaScript testing framework that is used for unit testing, integration testing, and snapshot testing. It is known for its simplicity, speed, and ease of use.
+- Playwright is a browser automation library that allows developers to automate web applications in different browsers, such as Chrome, Firefox, and Safari. It provides a high-level API that is easy to use and can be integrated with testing frameworks like Jest.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Author
+M Fikri A - [GitHub Profile](https://github.com.mfikria)
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
