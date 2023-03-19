@@ -9,7 +9,7 @@ export type TPokemonGrid = React.HTMLProps<HTMLDivElement> & {
   pokemons: Pokemon[]
 }
 
-function PokemonGrid(props) {
+function PokemonGrid(props: TPokemonGrid) {
   const { pokemons, isLoading = false, isLoadingMore = false, ...rest } = props
   return (
     <div {...rest}>
@@ -21,7 +21,11 @@ function PokemonGrid(props) {
           max-w-[900px]
           mx-auto
           my-0
+          p-4
           sm:(
+            grid-cols-2
+          )
+          md:(
             grid-cols-3
           )
         ">
@@ -35,7 +39,7 @@ function PokemonGrid(props) {
         }
       </div>
       {
-        isLoadingMore && <Spinner tw="mt-6" />
+        isLoadingMore && <Spinner tw="my-6" />
       }
     </div>
     
