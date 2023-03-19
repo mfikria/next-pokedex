@@ -1,26 +1,31 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react'
 
 const useScrollToEnd = (callbackFn: (isEnd: boolean) => void) => {
-  const [isEnd, setIsEnd] = useState(false);
+  const [isEnd, setIsEnd] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset;
-      const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
-      const clientHeight = document.documentElement.clientHeight || window.innerHeight;
-      const isBottom = scrollTop + clientHeight >= scrollHeight;
+      const scrollTop =
+        document.documentElement.scrollTop ||
+        document.body.scrollTop ||
+        window.pageYOffset
+      const scrollHeight =
+        document.documentElement.scrollHeight || document.body.scrollHeight
+      const clientHeight =
+        document.documentElement.clientHeight || window.innerHeight
+      const isBottom = scrollTop + clientHeight >= scrollHeight
       console.log(window.pageYOffset, clientHeight, scrollHeight)
-      setIsEnd(isBottom);
+      setIsEnd(isBottom)
       callbackFn(isBottom)
-    };
+    }
 
     handleScroll()
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
-  return isEnd;
-};
+  return isEnd
+}
 
-export default useScrollToEnd;
+export default useScrollToEnd

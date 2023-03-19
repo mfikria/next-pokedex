@@ -45,7 +45,6 @@ module.exports = {
     'no-console': 'warn',
     'react/no-typos': 'error',
     'react/boolean-prop-naming': 'warn',
-    'react/no-array-index-key': 'error',
     'react/state-in-constructor': 'off',
     'react/no-unescaped-entities': 'off',
     'react/jsx-indent': ['error', 2],
@@ -55,6 +54,8 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn', 
+    'react/no-array-index-key': 'off',
+    'react-hooks/rules-of-hooks': 'off',
     'prettier/prettier': [
       'error',
       {

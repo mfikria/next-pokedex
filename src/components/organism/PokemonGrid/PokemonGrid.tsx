@@ -1,7 +1,7 @@
-import { Pokemon } from "pokenode-ts"
-import Spinner from "~/components/atoms/Spinner"
-import PokemonCard from "~/components/molecules/PokemonCard"
-import PokemonCardShimmer from "~/components/molecules/PokemonCard/Shimmer"
+import { Pokemon } from 'pokenode-ts'
+import Spinner from '~/components/atoms/Spinner'
+import PokemonCard from '~/components/molecules/PokemonCard'
+import PokemonCardShimmer from '~/components/molecules/PokemonCard/Shimmer'
 
 export type TPokemonGrid = React.HTMLProps<HTMLDivElement> & {
   isLoading?: boolean
@@ -11,7 +11,13 @@ export type TPokemonGrid = React.HTMLProps<HTMLDivElement> & {
 }
 
 function PokemonGrid(props: TPokemonGrid) {
-  const { pokemons, isLoading = false, isLoadingMore = false, onClickPokemon, ...rest } = props
+  const {
+    pokemons,
+    isLoading = false,
+    isLoadingMore = false,
+    onClickPokemon,
+    ...rest
+  } = props
   return (
     <div {...rest}>
       <div
@@ -29,26 +35,27 @@ function PokemonGrid(props: TPokemonGrid) {
           md:(
             grid-cols-3
           )
-        ">
-        { isLoading
-          ?
-            Array(9).fill(null).map((_, i) => <PokemonCardShimmer key={i} />)
-          :
-            pokemons.map(pokemon => (
+        "
+      >
+        {isLoading ? (
+          Array(9)
+            .fill(null)
+            .map((_, i) => <PokemonCardShimmer key={i} />)
+        ) : (
+          <>
+            {pokemons.map((pokemon) => (
               <PokemonCard
                 key={pokemon.id}
                 pokemon={pokemon}
                 onClick={() => onClickPokemon?.(pokemon)}
               />
-            ))
-        }
+            ))}
+          </>
+        )}
       </div>
-      {
-        isLoadingMore && <Spinner tw="my-6" />
-      }
+      {isLoadingMore && <Spinner tw="my-6" />}
     </div>
-    
-  ) 
+  )
 }
 
 export default PokemonGrid

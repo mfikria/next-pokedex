@@ -1,11 +1,11 @@
-import { ReactNode } from 'react';
+import { ReactNode } from 'react'
 
 export type TBadge = React.HTMLProps<HTMLDivElement> & {
   children: ReactNode
   color: string
 }
 
-function Badge (props) {
+function Badge(props) {
   const { children, color, ...rest } = props
   return (
     <span
@@ -17,7 +17,7 @@ function Badge (props) {
     >
       {children}
     </span>
-  );
-};
+  )
+}
 
-export default Badge;
+export default Badge

@@ -1,12 +1,15 @@
-import { Pokemon } from "pokenode-ts"
-import Card from "~/components/atoms/Card"
+import { Pokemon } from 'pokenode-ts'
+import Card from '~/components/atoms/Card'
 import Image from 'next/image'
-import { getPokemonTypeColor, getPokemonTypeGradientBackgroundColor } from "~/utils/colors"
-import DetailTable from "~/components/atoms/DetailTable"
-import Badge from "~/components/atoms/Badge"
-import tw from "twin.macro"
+import {
+  getPokemonTypeColor,
+  getPokemonTypeGradientBackgroundColor,
+} from '~/utils/colors'
+import DetailTable from '~/components/atoms/DetailTable'
+import Badge from '~/components/atoms/Badge'
+import tw from 'twin.macro'
 import BackIcon from '~/components/svg/back.svg'
-import capitalize from "lodash/capitalize"
+import capitalize from 'lodash/capitalize'
 
 export type TPokemonDetail = React.HTMLProps<HTMLDivElement> & {
   pokemon: Pokemon
@@ -40,10 +43,10 @@ function PokemonDetail(props: TPokemonDetail) {
     const name = capitalize(detail.stat.name)
     return {
       ...acc,
-      [name]: detail.base_stat
+      [name]: detail.base_stat,
     }
   }, {})
-  
+
   return (
     <Card
       tw="
@@ -99,7 +102,12 @@ function PokemonDetail(props: TPokemonDetail) {
           "
           css={[shadowStyles]}
         >
-          <Image src={pokemon.sprites.other?.dream_world.front_default!} alt={pokemon.name} fill tw="animate-bounce" />
+          <Image
+            src={pokemon.sprites.other?.dream_world.front_default || ''}
+            alt={pokemon.name}
+            fill
+            tw="animate-bounce"
+          />
         </div>
       </div>
       <div
@@ -113,10 +121,11 @@ function PokemonDetail(props: TPokemonDetail) {
         "
       >
         <div tw="mb-4">
-          {pokemon.types.map(({type}) => (
+          {pokemon.types.map(({ type }) => (
             <Badge
               color={getPokemonTypeColor(type.name)}
               tw="mr-1"
+              key={type.name}
             >
               {type.name}
             </Badge>

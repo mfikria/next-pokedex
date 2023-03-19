@@ -1,5 +1,5 @@
-import { Types } from "pokenode-ts";
-import tw from "twin.macro";
+import { Types } from 'pokenode-ts'
+import tw from 'twin.macro'
 
 export function getPokemonTypeGradientBackgroundColor(pokemonType: string) {
   const colors = {
@@ -21,9 +21,9 @@ export function getPokemonTypeGradientBackgroundColor(pokemonType: string) {
     dark: tw`from-[#705746]`,
     steel: tw`from-[#B7B7CE]`,
     fairy: tw`from-[#D685AD]`,
-  };
-  
-  return [colors[pokemonType] || colors.normal, tw`bg-gradient-to-b to-white`];
+  }
+
+  return [colors[pokemonType] || colors.normal, tw`bg-gradient-to-b to-white`]
 }
 
 export function getPokemonTypeColor(pokemonType: string): string {
@@ -46,7 +46,7 @@ export function getPokemonTypeColor(pokemonType: string): string {
     dark: '#705746',
     steel: '#B7B7CE',
     fairy: '#D685AD',
-  };
-  
-  return colors[pokemonType] || colors.normal;
+  }
+
+  return colors[pokemonType] || colors.normal
 }

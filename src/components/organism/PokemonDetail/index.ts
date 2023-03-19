@@ -1,2 +1,2 @@
-export { default } from "./PokemonDetail";
+export { default } from './PokemonDetail'
 export * from './PokemonDetail'

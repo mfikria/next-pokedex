@@ -1,4 +1,4 @@
-import tw from "twin.macro";
+import tw from 'twin.macro'
 
 const Card = tw.div`
   p-4
@@ -18,6 +18,6 @@ const Card = tw.div`
   hover:(
     shadow-gray-300
   )
-`;
+`
 
-export default Card;
+export default Card

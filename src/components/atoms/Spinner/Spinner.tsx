@@ -24,7 +24,7 @@ function Spinner(props: TSpinner) {
           border-r-transparent
           align-[-0.125em]
           motion-reduce:animate-[spin_1.5s_linear_infinite]"
-        >
+      >
         <span
           tw="
             !absolute
@@ -37,9 +37,9 @@ function Spinner(props: TSpinner) {
             !p-0
             ![clip:rect(0,0,0,0)]
           "
-          >
-            Loading...
-          </span>
+        >
+          Loading...
+        </span>
       </div>
     </div>
   )

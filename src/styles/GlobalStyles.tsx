@@ -7,7 +7,7 @@ const customStyles = css({
     ...tw`antialiased`,
     fontFamily: `'Montserrat', sans-serif`,
     boxSizing: 'border-box',
-    color: '#333'
+    color: '#333',
   },
 })
 

@@ -1,15 +1,15 @@
-import { Pokemon } from "pokenode-ts";
-import Card from "~/components/atoms/Card";
+import { Pokemon } from 'pokenode-ts'
+import Card from '~/components/atoms/Card'
 import Image from 'next/image'
-import { getPokemonTypeGradientBackgroundColor } from "~/utils/colors";
-import Typography from "~/components/atoms/Typography";
+import { getPokemonTypeGradientBackgroundColor } from '~/utils/colors'
+import Typography from '~/components/atoms/Typography'
 
 export type TPokemonCard = React.HTMLProps<HTMLDivElement> & {
-  pokemon: Pokemon;
-};
+  pokemon: Pokemon
+}
 
 function PokemonCard(props: TPokemonCard) {
-  const { pokemon, ...rest } = props;
+  const { pokemon, ...rest } = props
   const mainType = pokemon.types[0].type.name
   return (
     <Card
@@ -28,9 +28,13 @@ function PokemonCard(props: TPokemonCard) {
           relative
         "
       >
-        <Image src={pokemon.sprites.other?.dream_world.front_default!} alt={pokemon.name} fill />
+        <Image
+          src={pokemon.sprites.other?.dream_world.front_default || ''}
+          alt={pokemon.name}
+          fill
+        />
       </div>
-      
+
       <Typography variant="h3" tw="uppercase mb-0 font-bold">
         {pokemon.name}
       </Typography>

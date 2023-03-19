@@ -1,26 +1,27 @@
-import usePokeApi from "~/hooks/usePokeApi";
-import useScrollToEnd from "~/hooks/useScrollToEnd";
+import usePokeApi from '~/hooks/usePokeApi'
+import useScrollToEnd from '~/hooks/useScrollToEnd'
 import Logo from '~/components/svg/pokemon-logo.svg'
-import PokemonGrid from "~/components/organism/PokemonGrid";
+import PokemonGrid from '~/components/organism/PokemonGrid'
 import flatten from 'lodash/flatten'
 import debounce from 'lodash/debounce'
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router'
 import Error from '~/pages/_error'
 
 export default function IndexPage() {
   const router = useRouter()
   const { fetchPokemonList } = usePokeApi()
-  const { data, fetchNextPage, isLoading, isFetchingNextPage, isError, error } = fetchPokemonList()
-
-  if (isError) {
-    return <Error statusCode={(error as Error).message} />
-  }
+  const { data, fetchNextPage, isLoading, isFetchingNextPage, isError, error } =
+    fetchPokemonList()
 
   useScrollToEnd((isEnd) => {
     if (isEnd && !isFetchingNextPage) {
       debounce(fetchNextPage, 300)()
     }
   })
+
+  if (isError) {
+    return <Error statusCode={(error as Error).message} />
+  }
 
   return (
     <>
@@ -36,5 +37,5 @@ export default function IndexPage() {
         }}
       />
     </>
-  );
+  )
 }

@@ -1,5 +1,5 @@
-import tw from "twin.macro";
-import Card from "~/components/atoms/Card";
+import tw from 'twin.macro'
+import Card from '~/components/atoms/Card'
 
 const PokemonCardShimmer = tw(Card)`
   bg-gray-200
