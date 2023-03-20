@@ -1,6 +1,9 @@
 import { useState, useEffect, DependencyList } from 'react'
 
-const useScrollToEnd = (callbackFn: (isEnd: boolean) => void, deps?: DependencyList) => {
+const useScrollToEnd = (
+  callbackFn: (isEnd: boolean) => void,
+  deps?: DependencyList
+) => {
   const [isEnd, setIsEnd] = useState(false)
 
   useEffect(() => {

@@ -1,4 +1,3 @@
-import { Types } from 'pokenode-ts'
 import tw from 'twin.macro'
 
 export function getPokemonTypeGradientBackgroundColor(pokemonType: string) {

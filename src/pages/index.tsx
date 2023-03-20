@@ -13,12 +13,14 @@ export default function IndexPage() {
   const { data, fetchNextPage, isLoading, isFetchingNextPage, isError, error } =
     fetchPokemonList()
 
-  useScrollToEnd((isEnd) => {
-    if (isEnd && !isFetchingNextPage) {
-      debounce(fetchNextPage, 200)()
-    }
-  }, [data])
-  
+  useScrollToEnd(
+    (isEnd) => {
+      if (isEnd && !isFetchingNextPage) {
+        debounce(fetchNextPage, 200)()
+      }
+    },
+    [data]
+  )
 
   if (isError) {
     return <Error statusCode={(error as Error).message} />

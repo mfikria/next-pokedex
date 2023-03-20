@@ -1,6 +1,5 @@
 import {
   getPokemonTypeColor,
-  getPokemonTypeGradientBackgroundColor,
 } from './colors'
 
 describe('getPokemonTypeColor', () => {
