@@ -15,9 +15,10 @@ export default function IndexPage() {
 
   useScrollToEnd((isEnd) => {
     if (isEnd && !isFetchingNextPage) {
-      debounce(fetchNextPage, 300)()
+      debounce(fetchNextPage, 200)()
     }
-  })
+  }, [data])
+  
 
   if (isError) {
     return <Error statusCode={(error as Error).message} />

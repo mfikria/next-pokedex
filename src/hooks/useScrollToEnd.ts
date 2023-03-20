@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, DependencyList } from 'react'
 
-const useScrollToEnd = (callbackFn: (isEnd: boolean) => void) => {
+const useScrollToEnd = (callbackFn: (isEnd: boolean) => void, deps?: DependencyList) => {
   const [isEnd, setIsEnd] = useState(false)
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const useScrollToEnd = (callbackFn: (isEnd: boolean) => void) => {
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, deps || [])
 
   return isEnd
 }
