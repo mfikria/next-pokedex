@@ -1,6 +1,4 @@
-import {
-  getPokemonTypeColor,
-} from './colors'
+import { getPokemonTypeColor } from './colors'
 
 describe('getPokemonTypeColor', () => {
   it('returns the correct color for a given Pokemon type', () => {
