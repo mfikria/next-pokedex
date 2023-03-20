@@ -19,6 +19,7 @@ function PokemonCard(props: TPokemonCard) {
         h-[200px]
         cursor-pointer
       "
+      data-testid={`pokemon-card-${pokemon.name}`}
       {...rest}
     >
       <div

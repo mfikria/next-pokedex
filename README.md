@@ -29,11 +29,27 @@ yarn
 yarn dev
 ```
 
+### Build Production build
+```bash
+yarn build
+```
+
+### Start Production build
+```bash
+yarn start
+```
+
 ## Testing
 
 ### Unit Test
+To run Jest tests, use the command `npm test` in your terminal or command prompt. This will run all test cases in the `*.test.ts` files.
+
+```bash
+yarn test
+```
 
 ### E2E
+To run Playwright tests, use the command in your terminal or command prompt. This will run all test cases in the `e2e` directory.
 
 ```bash
 npx playwright install
@@ -57,6 +73,7 @@ Here's a brief description of the files and directories:
   - services: Contains modules that interact with external services or APIs, such as the PokeApi module that communicates with the PokeAPI.
   - styles: Contains global styles used throughout the app, such as the GlobalStyles module.
   - utils: Contains utility modules, such as the colors module for defining the app's color scheme.
+  - e2e: End to end test folder
 
 ## Technology
 - Next.js is a React framework used for server-side rendering, static site generation, and building modern web applications.

@@ -26,7 +26,7 @@ export default function IndexPage() {
   return (
     <>
       <div tw="flex justify-center w-full mb-4">
-        <Logo />
+        <Logo data-testid="site-logo" />
       </div>
       <PokemonGrid
         isLoading={isLoading}

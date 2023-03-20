@@ -5,13 +5,14 @@ export default function Error({ statusCode }) {
   return (
     <div
       tw="
-          flex
-          flex-col
-          w-[100vw]
-          h-[100vh]
-          items-center
-          justify-center
-        "
+        flex
+        flex-col
+        w-[100vw]
+        h-[100vh]
+        items-center
+        justify-center
+      "
+      data-testid={`error-handle-${statusCode}`}
     >
       {statusCode && (
         <Typography variant="h2" tw="font-bold text-lg">

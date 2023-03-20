@@ -10,6 +10,7 @@ function Spinner(props: TSpinner) {
         w-full
       "
       {...props}
+      data-testid="spinner"
     >
       <div
         tw="

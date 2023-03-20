@@ -63,6 +63,7 @@ function PokemonDetail(props: TPokemonDetail) {
           rounded-2xl
         )
       "
+      data-testid={`pokemon-detail-${pokemon.name}`}
       {...rest}
     >
       <div
@@ -107,6 +108,7 @@ function PokemonDetail(props: TPokemonDetail) {
             alt={pokemon.name}
             fill
             tw="animate-bounce"
+            data-testid={`pokemon-detail-image-${pokemon.name}`}
           />
         </div>
       </div>
@@ -126,6 +128,7 @@ function PokemonDetail(props: TPokemonDetail) {
               color={getPokemonTypeColor(type.name)}
               tw="mr-1"
               key={type.name}
+              data-testid={`pokemon-type-${type.name}`}
             >
               {type.name}
             </Badge>
@@ -134,6 +137,7 @@ function PokemonDetail(props: TPokemonDetail) {
         <DetailTable
           title={pokemon.name.toLocaleUpperCase()}
           details={detailStats}
+          data-testid={`pokemon-detail-table-${pokemon.name}`}
         />
       </div>
     </Card>
